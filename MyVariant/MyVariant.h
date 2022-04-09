@@ -1,6 +1,11 @@
 #pragma once
-template <class T>
+template <class ...Args>
 class MyVariant
 {
+public:
+	MyVariant();
+	~MyVariant();
+private:
+
 };
 
