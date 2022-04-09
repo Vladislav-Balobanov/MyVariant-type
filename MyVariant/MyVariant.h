@@ -6,6 +6,6 @@ public:
 	MyVariant();
 	~MyVariant();
 private:
-
+	Args* value;
 };
 
