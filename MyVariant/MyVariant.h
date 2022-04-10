@@ -1,11 +1,11 @@
 #pragma once
-template <class ...Args>
+#include <iostream>
+
+template<typename I, typename B, typename F, typename D>
 class MyVariant
 {
 public:
 	MyVariant();
 	~MyVariant();
-private:
-	Args* value;
 };
 
