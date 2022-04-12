@@ -31,10 +31,7 @@ MyVariant::MyVariant()
 template<typename type>
 inline MyVariant::MyVariant(type value)
 {
-	i_value = value;
-	b_value = value;
-	f_value = value;
-	d_value = value;
+	set(value);
 }
 
 template<typename type>
