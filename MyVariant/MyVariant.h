@@ -39,3 +39,22 @@ inline void MyVariant::set(type value)
 	f_value = value;
 	d_value = value;
 }
+
+template<typename type>
+inline type& MyVariant::get(type value)
+{
+	switch (type)
+	{
+	case "int":
+		return i_value;
+	case "bool":
+		return b_value;
+	case "float":
+		return f_value;
+	case "double":
+		return d_value;
+	default:
+		return (type)0;
+		break;
+	}
+}
