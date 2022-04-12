@@ -3,6 +3,9 @@
 
 union MyVariant 
 {
+public:
+	MyVariant();
+	~MyVariant();
 private:
 	int i_value;
 	bool b_value;
