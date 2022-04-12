@@ -7,7 +7,6 @@ public:
 	MyVariant();
 	template <typename type>
 	MyVariant(type value);
-	~MyVariant();
 	template <typename type>
 	void set(type value);
 	template <typename type>
