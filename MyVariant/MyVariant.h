@@ -36,3 +36,12 @@ inline MyVariant::MyVariant(type value)
 	f_value = value;
 	d_value = value;
 }
+
+template<typename type>
+inline void MyVariant::set(type value)
+{
+	i_value = value;
+	b_value = value;
+	f_value = value;
+	d_value = value;
+}
