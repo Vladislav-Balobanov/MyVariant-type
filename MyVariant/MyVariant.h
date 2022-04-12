@@ -22,10 +22,7 @@ private:
 
 MyVariant::MyVariant()
 {
-	i_value = 0;
-	b_value = 0;
-	f_value = 0;
-	d_value = 0;
+	set(0);
 }
 
 template<typename type>
