@@ -27,3 +27,12 @@ MyVariant::MyVariant()
 	f_value = 0;
 	d_value = 0;
 }
+
+template<typename type>
+inline MyVariant::MyVariant(type value)
+{
+	i_value = value;
+	b_value = value;
+	f_value = value;
+	d_value = value;
+}
