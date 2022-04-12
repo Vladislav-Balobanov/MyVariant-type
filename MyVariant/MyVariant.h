@@ -10,7 +10,7 @@ public:
 	template <typename type>
 	void set(type value);
 	template <typename type>
-	type& get(type value);
+	type& get();
 private:
 	int i_value;
 	bool b_value;
@@ -40,7 +40,7 @@ inline void MyVariant::set(type value)
 }
 
 template<typename type>
-inline type& MyVariant::get(type value)
+inline type& MyVariant::get()
 {
 	switch (type)
 	{
