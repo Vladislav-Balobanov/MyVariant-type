@@ -18,3 +18,12 @@ private:
 	float f_value;
 	double d_value;
 };
+
+
+MyVariant::MyVariant()
+{
+	i_value = 0;
+	b_value = 0;
+	f_value = 0;
+	d_value = 0;
+}
