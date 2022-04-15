@@ -11,6 +11,7 @@ public:
 	void set(type value);
 	template <typename type>
 	type get();
+	MyVariant& operator=(MyVariant& anotherValue);
 private:
 	int i_value;
 	bool b_value;
