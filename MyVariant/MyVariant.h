@@ -33,10 +33,14 @@ inline MyVariant::MyVariant(type value)
 template<typename type>
 inline void MyVariant::set(type value)
 {
-	i_value = value;
-	b_value = value;
-	f_value = value;
-	d_value = value;
+	if (typeid(type) == typeid(int))
+		i_value = value;
+	else if (typeid(type) == typeid(bool))
+		b_value = value;
+	else if (typeid(type) == typeid(float))
+		f_value = value;
+	else if (typeid(type) == typeid(double))
+		d_value = value;
 }
 
 template<typename type>
