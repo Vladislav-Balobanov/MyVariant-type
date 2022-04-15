@@ -25,6 +25,16 @@ MyVariant::MyVariant()
 	set(0);
 }
 
+inline MyVariant & MyVariant::operator=(MyVariant & anotherValue)
+{
+	this->set<int>(anotherValue.get<int>());
+	this->set<bool>(anotherValue.get<bool>());
+	this->set<float>(anotherValue.get<float>());
+	this->set<double>(anotherValue.get<double>());
+
+	return *this;
+}
+
 template<typename type>
 inline MyVariant::MyVariant(type value)
 {
