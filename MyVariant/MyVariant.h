@@ -10,7 +10,7 @@ public:
 	template <typename type>
 	void set(type value);
 	template <typename type>
-	type& get();
+	type get();
 private:
 	int i_value;
 	bool b_value;
@@ -40,20 +40,14 @@ inline void MyVariant::set(type value)
 }
 
 template<typename type>
-inline type& MyVariant::get()
+inline type MyVariant::get()
 {
-	switch (type)
-	{
-	case "int":
+	if (typeid(type) == typeid(int))
 		return i_value;
-	case "bool":
+	else if (typeid(type) == typeid(bool))
 		return b_value;
-	case "float":
+	else if (typeid(type) == typeid(float))
 		return f_value;
-	case "double":
+	else if (typeid(type) == typeid(double))
 		return d_value;
-	default:
-		return (type)0;
-		break;
-	}
 }
