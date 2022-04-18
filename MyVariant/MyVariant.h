@@ -11,7 +11,6 @@ public:
 	void set(type value);
 	template <typename type>
 	type get();
-	MyVariant& operator=(MyVariant& anotherValue);
 private:
 	int i_value;
 	bool b_value;
@@ -23,16 +22,6 @@ private:
 MyVariant::MyVariant()
 {
 	set(0);
-}
-
-inline MyVariant & MyVariant::operator=(MyVariant & anotherValue)
-{
-	this->set<int>(anotherValue.get<int>());
-	this->set<bool>(anotherValue.get<bool>());
-	this->set<float>(anotherValue.get<float>());
-	this->set<double>(anotherValue.get<double>());
-
-	return *this;
 }
 
 template<typename type>
