@@ -40,13 +40,21 @@ template<typename type>
 inline void MyVariant::set(type value)
 {
 	if (typeid(type) == typeid(int))
+	{
 		i_value = value;
+	}
 	else if (typeid(type) == typeid(bool))
+	{
 		b_value = value;
+	}
 	else if (typeid(type) == typeid(float))
+	{
 		f_value = value;
+	}
 	else if (typeid(type) == typeid(double))
+	{
 		d_value = value;
+	}
 }
 
 template<typename type>
