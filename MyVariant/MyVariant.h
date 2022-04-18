@@ -1,5 +1,11 @@
 #pragma once
 #include <iostream>
+#include <array>
+
+namespace what_type
+{
+	std::string what_type;
+}
 
 union MyVariant 
 {
