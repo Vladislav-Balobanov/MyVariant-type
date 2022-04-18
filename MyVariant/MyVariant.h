@@ -2,7 +2,7 @@
 #include <iostream>
 #include <array>
 
-namespace what_type
+namespace w_type
 {
 	std::string what_type;
 }
@@ -42,18 +42,22 @@ inline void MyVariant::set(type value)
 	if (typeid(type) == typeid(int))
 	{
 		i_value = value;
+		w_type::what_type = "int";
 	}
 	else if (typeid(type) == typeid(bool))
 	{
 		b_value = value;
+		w_type::what_type = "bool";
 	}
 	else if (typeid(type) == typeid(float))
 	{
 		f_value = value;
+		w_type::what_type = "float";
 	}
 	else if (typeid(type) == typeid(double))
 	{
 		d_value = value;
+		w_type::what_type = "double";
 	}
 }
 
