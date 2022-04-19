@@ -2,11 +2,6 @@
 #include <iostream>
 #include <array>
 
-namespace w_type
-{
-	std::string what_type;
-}
-
 class MyVariant 
 {
 public:
