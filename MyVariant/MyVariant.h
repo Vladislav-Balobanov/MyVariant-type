@@ -1,7 +1,8 @@
 #pragma once
 #include <iostream>
+#include <array>
 
-union MyVariant 
+class MyVariant 
 {
 public:
 	MyVariant();
@@ -11,28 +12,22 @@ public:
 	void set(type value);
 	template <typename type>
 	type get();
-	MyVariant& operator=(MyVariant& anotherValue);
+	std::string& getType() { return what_type; }
 private:
-	int i_value;
-	bool b_value;
-	float f_value;
-	double d_value;
+	union
+	{
+		int i_value;
+		bool b_value;
+		float f_value;
+		double d_value;
+	};
+	std::string what_type;
 };
 
 
 MyVariant::MyVariant()
 {
 	set(0);
-}
-
-inline MyVariant & MyVariant::operator=(MyVariant & anotherValue)
-{
-	this->set<int>(anotherValue.get<int>());
-	this->set<bool>(anotherValue.get<bool>());
-	this->set<float>(anotherValue.get<float>());
-	this->set<double>(anotherValue.get<double>());
-
-	return *this;
 }
 
 template<typename type>
@@ -45,13 +40,25 @@ template<typename type>
 inline void MyVariant::set(type value)
 {
 	if (typeid(type) == typeid(int))
+	{
 		i_value = value;
+		what_type = "int";
+	}
 	else if (typeid(type) == typeid(bool))
+	{
 		b_value = value;
+		what_type = "boolean";
+	}
 	else if (typeid(type) == typeid(float))
+	{
 		f_value = value;
+		what_type = "float";
+	}
 	else if (typeid(type) == typeid(double))
+	{
 		d_value = value;
+		what_type = "double";
+	}
 }
 
 template<typename type>
