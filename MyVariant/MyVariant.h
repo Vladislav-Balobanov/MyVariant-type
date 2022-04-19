@@ -12,6 +12,7 @@ public:
 	void set(type value);
 	template <typename type>
 	type get();
+	std::string& getType() { return what_type; }
 private:
 	union
 	{
@@ -20,6 +21,7 @@ private:
 		float f_value;
 		double d_value;
 	};
+	std::string what_type;
 };
 
 
@@ -40,18 +42,22 @@ inline void MyVariant::set(type value)
 	if (typeid(type) == typeid(int))
 	{
 		i_value = value;
+		what_type = "int";
 	}
 	else if (typeid(type) == typeid(bool))
 	{
 		b_value = value;
+		what_type = "boolean";
 	}
 	else if (typeid(type) == typeid(float))
 	{
 		f_value = value;
+		what_type = "float";
 	}
 	else if (typeid(type) == typeid(double))
 	{
 		d_value = value;
+		what_type = "double";
 	}
 }
 

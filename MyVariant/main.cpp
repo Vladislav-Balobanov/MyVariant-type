@@ -8,6 +8,7 @@
 int main()
 {
     MyVariant value(10);
-
+	value.set<float>(12);
+	std::cout << value.getType() << " value is " << value.get<float>() << std::endl;
 	return 0;
 }
