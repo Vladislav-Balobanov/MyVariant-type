@@ -7,7 +7,7 @@ namespace w_type
 	std::string what_type;
 }
 
-union MyVariant 
+class MyVariant 
 {
 public:
 	MyVariant();
@@ -18,10 +18,13 @@ public:
 	template <typename type>
 	type get();
 private:
-	int i_value;
-	bool b_value;
-	float f_value;
-	double d_value;
+	union
+	{
+		int i_value;
+		bool b_value;
+		float f_value;
+		double d_value;
+	};
 };
 
 
@@ -42,22 +45,18 @@ inline void MyVariant::set(type value)
 	if (typeid(type) == typeid(int))
 	{
 		i_value = value;
-		w_type::what_type = "int";
 	}
 	else if (typeid(type) == typeid(bool))
 	{
 		b_value = value;
-		w_type::what_type = "bool";
 	}
 	else if (typeid(type) == typeid(float))
 	{
 		f_value = value;
-		w_type::what_type = "float";
 	}
 	else if (typeid(type) == typeid(double))
 	{
 		d_value = value;
-		w_type::what_type = "double";
 	}
 }
 
